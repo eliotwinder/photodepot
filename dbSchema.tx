@@ -1,0 +1,18 @@
+User = {
+  userId: NUMBER,
+  username: 'eliot'
+  displayname: 'eze'
+};
+
+Photo = {
+  photoId: NUMBER,
+  user: User,
+  likes: [User, User, etc.],
+  comments: [Comment, Comment, Comment]
+};
+
+Comment = {
+  commentId: NUMBER,
+  user: User,
+  text: STRING
+};

@@ -1,0 +1,63 @@
+
+// PHOTOS WILL BE RETURNED IN THIS FORMAT
+photoObject = {
+  photoId: 12345,
+  user: {
+    username: 'eliot'
+    displayname: 'eze'
+  },
+  image: {
+    base64uri: 'base64 data uri'
+    contentType: 'png'
+  },
+  likes: ['username', 'username', 'username', etc.],
+  comments: [{
+    commentId: 12347
+    username: 'username',
+    comment: 'This is an awesome photo!'
+  }, comment, comment, etc.]
+}
+
+'api/photo/:photoid'
+  // takes in a limit and returns up to that many photos
+  // if photoid is defined, only returns that photo
+  // if userid is defined, only returns photos posted by that user
+  // that user 
+  GET
+    input: ?limit=75&userid=1234
+    output: res.body = {photo: [photos]} 
+    
+  // adds a photo
+  POST 
+    input: content-type: image/<any>
+    output: photo that was posted
+
+  // gets a photo by it's id
+  GET
+    input: 'api/photo/12345'
+    output: photo12345
+
+  DELETE
+    input: 'api/photo/12345'
+    output: 
+      success: '200' status 
+      // if it isn't the user's photo
+      failure: '401' status 
+ 
+'/api/comment'
+  // adds a comment
+  POST
+    input: {
+      photoId: '12345'
+      text: 'This is an awesome photo!'}
+    output: photo that was commented on
+
+  // removes a comment
+  DELETE
+    input: {
+      commentId: '12345'
+    }
+
+
+
+
